@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import Grid, { GridHandles } from "./Grid";
 
@@ -105,6 +106,7 @@ const Snake: React.FC<SnakeProps> = () => {
           if (newPos.x === objectivePos.current.x && newPos.y === objectivePos.current.y) {
             let newObjectivePos = randomCoords();
             while ((playerPos.current.y === newObjectivePos.y && playerPos.current.x === newObjectivePos.x) ||
+              // eslint-disable-next-line no-loop-func
               previousPositions.some(coord => coord.y === newObjectivePos.y && coord.x === newObjectivePos.x)
             ) {
               newObjectivePos = randomCoords();  
