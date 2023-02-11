@@ -2,7 +2,7 @@
 
 ![Screenshot of the snake game implemented by aske-w](218270649-08b87559-1651-49b7-b431-c9564493fdc3.png "Snake gameplay")
 
-This repository contains an implementation of the classic game of snake. 
+This repository contains an implementation of the classic game of snake. Check it out at https://aske-w.github.io/snake/
 
 ## Controls
 
