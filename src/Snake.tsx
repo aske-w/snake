@@ -78,7 +78,6 @@ const Snake: React.FC<SnakeProps> = () => {
   }, [])
 
   const nextPos = (currentPos: Coords, direction: Direction): Coords => {
-    console.log({currentPos});
     switch (direction) {
       case "left":
         return { x: (currentPos.x + cols - 1) % cols, y: currentPos.y };
