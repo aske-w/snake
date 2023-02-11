@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -17,5 +19,5 @@ jobs:
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         with: 
-          github_token: ${{ secrets.DEPLOY_GH_PRV_KEY }}
+          deploy_key: ${{ secrets.DEPLOY_GH_PRV_KEY }}
           publish_dir: ./public
