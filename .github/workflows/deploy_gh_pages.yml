@@ -1,0 +1,23 @@
+name: Build & deploy to GitHub Pages
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  buildAndDeploy:
+    runs-on: ubuntu-22.04
+    # permissions:
+    #   contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
+        with: 
+          github_token: ${{ secrets.DEPLOY_GH_PRV_KEY }}
+          public_dir: ./public
